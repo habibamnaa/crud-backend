@@ -9,6 +9,12 @@ import {
 
 const router = express.Router();
 
+router.get("/", async (req, res, next) => {
+    return res.status(200).json({
+      title: "Express Testing",
+      message: "The app is working properly!",
+    });
+  });
 router.get('/products', getProducts);
 router.get('/products/:id', getProductById);
 router.post('/products', saveProduct);
